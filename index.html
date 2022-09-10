@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* The Modal (background) */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+        
+        html {
+            font-size: 62.5%;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: sans-serif;
+            color: #333;
+            line-height: 1.5;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            background: linear-gradient(to top left, #28b487, #7dd56f);
+        }
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+        /* Modal Content */
+        
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+        /* Add Animation */
+        
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+        
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+        /* The Close Button */
+        
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+        
+        .modal-body {
+            padding: 2px 16px;
+        }
+        
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
+        
+        .show-modal {
+            font-size: 2rem;
+            font-weight: 600;
+            padding: 1.75rem 3.5rem;
+            margin: 5rem 2rem;
+            border: none;
+            background-color: #fff;
+            color: #444;
+            border-radius: 10rem;
+            cursor: pointer;
+        }
+        
+        .first {
+            position: absolute;
+            top: 50%;
+            left: 80%;
+            transform: translate(-90%, -50%);
+            width: 70%;
+            background-color: white;
+            padding: 3rem;
+            border-radius: 5px;
+            box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            font-size: 3rem;
+            font-weight: 600;
+            /***to center it****/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first">My Skills</div>
+
+
+
+    <!-- Trigger/Open The Modal -->
+    <button class="show-modal">Skill 1</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>HTML</h2>
+            </div>
+            <div class="modal-body">
+                <p>very good in HTML................</p>
+                <p>Some other text...</p>
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- Trigger/Open The Modal -->
+    <button class="show-modal">Skill 2</button>
+
+    <!-- The Modal -->
+    <div id="myModal1" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>CSS</h2>
+            </div>
+            <div class="modal-body">
+                <p>Very good in CSS</p>
+                <p>Some other text...</p>
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementsByClassName('modal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementsByClassName("show-modal");
+
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close");
+
+        // When the user clicks the button, open the modal 
+        btn[0].onclick = function() {
+            modal[0].style.display = "block";
+        }
+
+        btn[1].onclick = function() {
+                modal[1].style.display = "block";
+            }
+            // When the user clicks on <span> (x), close the modal
+        span[0].onclick = function() {
+            modal[0].style.display = "none";
+        }
+
+        span[1].onclick = function() {
+                modal[1].style.display = "none";
+            }
+            // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal[0]) {
+                modal[0].style.display = "none";
+            }
+            if (event.target == modal[1]) {
+                modal[1].style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
